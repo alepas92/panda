@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MC(Panda)</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		
+		<nav>
+	<div class="logo">Logo</div>
+	<ul class="horizNav">
+		<li><a href="#">Calendar</a></li>
+		<li><a href="#">Day planing</a></li>
+		<li><a href="#">Statistic</a></li>
+	</ul>
+</nav>
+		
+		<section id="calendar" class="noneDisplay"></section>
+
+		<section id="daySpendsWrapper">
+	<div class="buttonsContainer">
+		<button class="toolsButton" id="toolsButton" onclick="displaySpendsTools()">tools</button>
+
+		<button class="computingButton" id="computingButton" onclick="">computing</button>
+
+		<aside id="spendsTools" class="noneDisplay">
+			<h1>Tools-panel</h1>
+			<ul>
+				<li><a href="#" onclick="displayCategoriesContainer()">Categories</a></li>
+				<li><a href="#" onclick="createField()">Add cost-field</a></li>
+			</ul>
+		</aside>
+	</div>
+	
+
+	<form id="spendsContainer">
+		<h1>Write your today spends:</h1>
+	</form>
+
+	<form id="resultOfComputing">
+		<label>Total cost: 
+			<input type="text" id="totalCost" name="totalCost" disabled>
+		</label>
+	</form>
+</section>
+
+		<section id="categories" class="noneDisplay">
+	<div id="categoriesTools">
+		<a href="#" onclick="displayCategoriesContainer()">CLOSE</a>
+		<div class="categoriesListContainer">
+			<h1>Your categories: </h1>				
+			<ul id="categoriesToolsList"></ul>
+		</div>
+		
+		<div class="addCategoryContainer">
+			<h1>Add category</h1>
+			<label>New category name: 
+				<input type="text" id="newCategoryName">
+			</label>
+			<input type="button" value="Add" onclick="addCategoryIntoLS()">
+		</div>
+
+	</div>
+</section>
+	
+	</body>
+	<script type="text/javascript" src="js/script.js"></script>
+</html>
