@@ -99,36 +99,35 @@ function Data () {
 	};
 
 	Data.prototype.getDaylyStatistic = function () {
-		var keyWord = todayKeyWord + '_statistic';
-		if (!localStorage[keyWord]){
+		if (!localStorage[todayKeyWord + '_statistic']){
 			var defaultDaylyStatistic = {
 				'outlays' : {},
 				'incomes' : {}
 			};
 
-			LS.set(keyWord, defaultDaylyStatistic);
-			this[keyWord] = LS.get(keyWord, defaultDaylyStatistic);
+			LS.set(todayKeyWord + '_statistic', defaultDaylyStatistic);
+			this[todayKeyWord + '_statistic'] = LS.get(todayKeyWord + '_statistic', defaultDaylyStatistic);
 		} else {
-			this[keyWord] = LS.get(keyWord);
+			this[todayKeyWord] = LS.get(todayKeyWord + '_statistic');
 		}
 	};
 
 	Data.prototype.getTotalStatistic = function () {
 		if (!localStorage.totalStatistic){
 			var defaultTotalStatistic = {
+				'month' : {
+					'outlays' : {},
+					'incomes' : {}
+				},
+
+				'year' : {
+					'outlays' : {},
+					'incomes' : {}
+				},
+
 				'currentBalance' : 0,
 				'currentOutlays' : 0,
 				'currentIncomes' : 0
-			};
-
-			defaultTotalStatistic['month_' + date.month] = {
-				'outlays' : {},
-				'incomes' : {}
-			};
-
-			defaultTotalStatistic['year_' + date.year] = {
-				'outlays' : {},
-				'incomes' : {}
 			};
 
 			LS.set('totalStatistic', defaultTotalStatistic);
@@ -145,6 +144,9 @@ data.getForecast();
 data.getDaylyStatistic();
 data.getDayly();
 data.getTotalStatistic();
+
+
+
 
 
 
