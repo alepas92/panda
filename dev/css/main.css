@@ -10,6 +10,12 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+@import url(desktop/desktop-main-style.css);
+@import url(laptop-tablet/laptop-tablet-landscape-main-style.css);
+@import url(laptop-tablet/tablet-portrait-main-style.css);
+@import url(phone-landscape/phone-landscape-main-style.css);
+@import url(phone-portrait/phone-portrait-main-style.css);
+
 html,
 button,
 input,
