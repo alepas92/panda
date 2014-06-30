@@ -25,3 +25,7 @@ LS.deleteItem = function (keyword) {
 LS.getMonthStatistic = function () {
 	localStorage['month_' + date.month];
 }
+
+LS.clear = function(){
+	localStorage.clear();
+}
