@@ -8,7 +8,9 @@ module.exports = function(grunt) {
                     {cwd: 'dev/', src: 'index.html', dest: 'build/', expand: true},
                     {cwd: 'dev/lib/jasmine-2.0.0', src: '*', dest: 'build/lib/jasmine-2.0.0', expand: true},
                     {cwd: 'dev/lib/pandastrap', src: '*', dest: 'build/lib/pandastrap', expand: true},
-                    {cwd: 'dev/img/main', src: '*', dest: 'build/img/main', expand: true}
+                    {cwd: 'dev/img/main', src: '*', dest: 'build/img/main', expand: true},
+                    {cwd: 'dev/js/vendor', src: '*', dest: 'build/js/vendor', expand: true},                   
+                	{cwd: 'dev/lib/pandastrap/svg', src: '*', dest: 'build/lib/pandastrap/svg', expand: true}
                 ]
             },
         },
@@ -18,10 +20,11 @@ module.exports = function(grunt) {
                 separator: ';',
             },
 
-            dist: {
-                src: ['dev/js/sourses.js', 'dev/js/LSmethods.js', 'dev/js/controls.js', 'dev/js/layoutPainting.js'],
+            apps: {
+                src: ['dev/js/app/controllers/controllers.js', 'dev/js/app/models/LSmethods.js', 'dev/js/app/models/data.js', 'dev/js/app/views/layoutPainting.js'],
                 dest: 'build/js/script.js',
             },
+
         },
 
         sass: {
@@ -41,17 +44,21 @@ module.exports = function(grunt) {
             options: {},
             main: {
                 files: [
-                    {src: "dev/nav.html", dest: "build/index.html", match: "<!--Stuff nav here-->"},
+                    {src: "dev/vertical-top-line.html", dest: "build/index.html", match: " <!--Stuff vertical top line here-->"},
                     {src: "dev/calendar.html", dest: "build/index.html", match: "<!--Stuff calendar here-->"},
-                    {src: "dev/categoriesPanel.html", dest: "build/index.html", match: "<!--Stuff categoriesPanel here-->"},
-                    {src: "dev/todaySpendsField.html", dest: "build/index.html", match: "<!--Stuff todaySpendsField here-->"},
+                    {src: "dev/outlays-section.html", dest: "build/index.html", match: "<!--Stuff outlays section here-->"},
+                    {src: "dev/incomes-section.html", dest: "build/index.html", match: "<!--Stuff incomes section here-->"},
+                    {src: "dev/manage-forecast.html", dest: "build/index.html", match: "<!--Stuff manage forecast section here-->"},
+                    {src: "dev/manage-balance.html", dest: "build/index.html", match: "<!--Stuff manage balance section here-->"},
+                    {src: "dev/statistics.html", dest: "build/index.html", match: "<!--Stuff statistics section here-->"},
+                    {src: "dev/footer.html", dest: "build/index.html", match: "<!--Stuff footer here-->"},
                 ],
             },
         },
 
         watch: {
             html: {
-                files: ['dev/*.html'],
+                files: ['dev/*.html','dev/lib/pandastrap/*','dev/img/main/*','dev/lib/pandastrap/svg/*'],
                 tasks: ['copy', 'insert'],
             },
 
