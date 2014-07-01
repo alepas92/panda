@@ -184,26 +184,21 @@ input::-webkit-input-placeholder { color: #6E6E6E; }
 	float:left;
 	height: 24px;
 }
+
 /* MENU */
-.adapt-nav a, .adapt-nav:before, .adapt-nav div:before {
-  display: inline-block;
-  color: #fff;
-  text-align: center;
-  cursor: pointer; /* курсор в виде руки, обязателен для Opera Mini */
-  background: black; /* цвет фона кнопки "меню" */
-  height: 100%;
-}
-.adapt-nav a {
-  width: 20%; /* 4 пункта меню, то есть 100%/4 */
-  background: black; /* фон пунктов меню */
-  text-decoration: none;
+.top-line-bar {
+	background: black;
+	overflow: hidden;
 }
 
-.adapt-nav div {
-	height: 35px;
+.adapt-nav a, .adapt-nav:before, .adapt-nav div:before {
+	display: block;
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 .adapt-nav a:hover {
-  color: #F3E2A9;
+	color: #F3E2A9;
 }
 

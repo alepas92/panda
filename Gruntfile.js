@@ -29,14 +29,9 @@ module.exports = function(grunt) {
 
         sass: {
             dist: {
-                files: [{
-                    outputstyle: 'compressed',
-                    expand: true,
-                    cwd: 'dev/scss/',
-                    src: ['*.scss'],
-                    dest: 'build/css',
-                    ext: '.css'
-                }]
+                files: [
+                    {outputstyle: 'compressed',expand: true,cwd: 'dev/scss/',src: ['*.scss'],dest: 'build/css',ext: '.css'},
+                ]
             }
         },
 
@@ -68,7 +63,7 @@ module.exports = function(grunt) {
             },
 
             sass: {
-                files: ['dev/scss/*.scss'],
+                files: ['dev/scss/*.scss', 'dev/scss/desktop/*.scss'],
                 tasks: ['sass'],
             },
         }

@@ -13,8 +13,6 @@ body {
   margin: 0 auto; }
 
 #logo {
-  height: 80px;
-  background: black;
   width: 30%;
   color: white;
   text-align: center; }
@@ -30,18 +28,21 @@ body {
   display: block; }
 
 #nav-bar {
-  height: 80px;
-  background: black;
   width: 70%;
   font-family: 'Times', italic;
   font-size: 1.1em;
   font-style: italic; }
 
 #nav-bar:focus {
-  border: 0px; }
+  border: none; }
 
-.adapt-nav div {
-  margin-top: 25px; }
+.adapt-nav ul {
+  margin: 33px 0px; }
+.adapt-nav li {
+  list-style: none;
+  float: left; }
+.adapt-nav li + li {
+  margin-left: 30px; }
 
 #container {
   width: 70%;
